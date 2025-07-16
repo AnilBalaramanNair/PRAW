@@ -1,0 +1,113 @@
+# 🧵 Reddit Comment Extractor
+
+🎯 Extract all comments from any Reddit post and export them to Excel using Python + PRAW.
+
+---
+
+## 🧰 Requirements
+
+- ✅ Reddit account
+- ✅ Python 3.8+ or higher
+- ✅ A Reddit post URL
+- ✅ Reddit App credentials (created below)
+
+---
+
+## 🚀 Quickstart Guide
+
+### ⚙️ 1. Install Required Python Libraries
+
+```bash
+pip install praw pandas openpyxl
+```
+
+---
+
+### 🔐 2. Create a Reddit App
+
+```none
+1. Go to: https://www.reddit.com/prefs/apps
+
+2. Scroll down and click: "create another app..."
+
+3. Fill in the form as follows:
+
+    name:           RedditExtractTool
+    type:           script
+    redirect URI:   http://localhost:8080
+
+4. Click "Create app"
+
+5. Copy the following:
+
+    - client_id (shown under app name)
+    - client_secret
+    - your Reddit username
+
+6. You’ll use these in the Python script provided.
+```
+
+---
+
+### 🧠 3. Prepare Your Python Script
+
+> The script is provided in this repo as `reddit_comment_extractor.txt`  
+> Open it and fill in your `client_id`, `client_secret`, `user_agent`, and the Reddit post URL.
+
+📌 Save it as `reddit_comment_extractor.py` after editing.
+
+---
+
+### 🏃 4. Run the Script
+
+Open terminal / CMD in the same folder and run:
+
+```bash
+python reddit_comment_extractor.py
+```
+
+After running, you'll see:
+
+```
+✅ Done! Comments saved to reddit_comments.xlsx
+```
+
+---
+
+### 📁 5. Output
+
+The script creates:
+
+📄 **reddit_comments.xlsx**
+
+Which contains:
+
+| Username     | Upvotes | Comment                             |
+|--------------|---------|--------------------------------------|
+| u/example123 | 145     | Cyberpunk 2077 deserves GOTY!        |
+| u/[deleted]  | 20      | Using it for ML projects and Blender |
+
+Use Excel filters or charts to analyze further.
+
+---
+
+## 🐛 Troubleshooting
+
+- ❗ `ModuleNotFoundError`  
+  → Run: `pip install praw pandas openpyxl`
+
+- ❗ Reddit API auth error  
+  → Ensure:
+    - The app is type **script**
+    - You used correct `client_id`, `client_secret`
+    - The Reddit post is public
+
+- ❗ Empty output  
+  → Double-check the URL and make sure the post has visible comments
+
+---
+
+## 🙌 Credits
+
+Made using [PRAW](https://praw.readthedocs.io/) — the Python Reddit API Wrapper.  
+Crafted with ❤️ for the open source and Reddit community.
