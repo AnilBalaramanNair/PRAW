@@ -1,0 +1,75 @@
+==============================
+HOW TO EXTRACT REDDIT COMMENTS
+==============================
+
+1. INSTALL PYTHON
+-----------------
+• Download Python from: https://www.python.org/downloads/
+• Run the installer.
+• VERY IMPORTANT: On the first screen, CHECK the box that says:
+  [✓] Add Python to PATH
+• Then click "Install Now".
+
+-----------------------------------------
+
+2. CREATE A REDDIT BOT (API APP)
+---------------------------------
+• Visit: https://www.reddit.com/prefs/apps
+• Scroll down and click: [Create App] or [Create Another App]
+• Fill in:
+   - Name: Any name you like (e.g., Comment Extractor)
+   - Type: Select "script"
+   - Redirect URI: http://localhost:8080
+   - Description: Optional
+• Click "Create app".
+
+• After creation, note down:
+   - client_id: (found under the app name)
+   - client_secret: (shown as a long string)
+   - user_agent: A short description like "Comment Extractor (by u/yourusername)"
+
+-----------------------------------------
+
+3. MODIFY 'extract-comments.py' FILE
+-------------------------------------
+• Open the 'extract-comments.py' file in a text editor (Notepad/VS Code).
+• Replace the following placeholders:
+
+   client_id="YOUR_CLIENT_ID"
+   client_secret="YOUR_CLIENT_SECRET"
+   user_agent="Comment Extractor (by u/YOUR_USERNAME)"
+
+• Replace the post link:
+   submission = reddit.submission(url="https://your.reddit.post.url")
+
+-----------------------------------------
+
+4. INSTALL PRAW USING CMD
+---------------------------
+• Open Command Prompt (CMD).
+• Run:
+
+   pip install praw
+
+-----------------------------------------
+
+5. NAVIGATE TO THE SCRIPT DIRECTORY
+------------------------------------
+• In CMD, go to the folder where 'extract-comments.py' is saved.
+  Example:
+
+   cd C:\Users\YourName\Documents\RedditBot
+
+-----------------------------------------
+
+6. RUN THE SCRIPT
+------------------
+• In CMD, type:
+
+   python extract-comments.py
+
+• You should see Reddit comments printed in the terminal.
+
+==============================
+You're all set. Happy scraping!
+==============================
